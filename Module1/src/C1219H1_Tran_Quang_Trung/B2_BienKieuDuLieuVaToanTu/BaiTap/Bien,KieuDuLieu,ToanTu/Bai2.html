@@ -2,9 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Bai2</title>
 </head>
 <body>
-$END$
+Độ C: <input type="text" id="doC">
+<button onclick="doisangF();">DoisangF</button>
+<p id="ketQuaF"></p>
+<script>
+    function doisangF() {
+        let doC = parseInt(document.getElementById("doC").value);
+        let ketQuaF = document.getElementById("ketQuaF");
+        ketQuaF.innerText = (9 * doC) / 5 + 23 ;
+    }
+</script>
 </body>
-</html>

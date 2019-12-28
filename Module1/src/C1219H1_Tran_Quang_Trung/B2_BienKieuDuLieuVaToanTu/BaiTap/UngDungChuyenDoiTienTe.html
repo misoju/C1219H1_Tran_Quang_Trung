@@ -1,11 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <title>chuyenTien</title>
 </head>
 <body>
-<form action="ChuyenDoiTien.js">
-    Ammount: <input type="number"><br>
-    From Currency
-</form>
+
+    Ammount: <input type="text" id="soTien">
+    From Currency: <select id="chonTu">
+    <option value="USD">USD</option>
+    <option value="VND">VND</option>
+    </select>
+    To Currency: <select id="chonSang">
+    <option value="USD">USD</option>
+    <option value="VND">VND</option>
+    </select>
+    <button onclick="chuyenDoi();">Convert</button>
+
+<p id="ketQua"></p>
+<script>
+    function chuyenDoi() {
+        var soTien = document.getElementById("soTien").value;
+        var chonTu = document.getElementById("chonTu").value;
+        var chonSang = document.getElementById("chonSang").value;
+        var ketQua = document.getElementById("ketQua");
+        if (chonTu == "VND" && chonSang == "USD"){
+            ketQua.innerText = soTien / 23000;
+        }
+        if (chonTu == "USD" && chonSang == "VND"){
+            ketQua.innerText = soTien * 23000;
+        }
+    }
+</script>
 </body>
 </html>

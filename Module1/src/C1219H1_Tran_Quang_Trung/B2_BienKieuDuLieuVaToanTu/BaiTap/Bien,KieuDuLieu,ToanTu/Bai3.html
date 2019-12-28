@@ -2,9 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Bai3</title>
 </head>
 <body>
-$END$
+Ban kinh Hinh Tron: <input type="text" id="r">
+<button onclick="tinhHinhTron();">tinhHinhTron</button>
+<p id="ketQuaA">DienTich</p>
+<p id="ketQuaC">BanKinh</p>
+<script>
+    function tinhHinhTron() {
+        let r = parseInt(document.getElementById("r").value);
+        const PI =  3.14159;
+        let ketQuaA = document.getElementById("ketQuaA");
+        let ketQuaC = document.getElementById("ketQuaC");
+        ketQuaC.innerText = (r * PI) ;
+        ketQuaA.innerText = (r * r) * PI ;
+    }
+</script>
 </body>
-</html>

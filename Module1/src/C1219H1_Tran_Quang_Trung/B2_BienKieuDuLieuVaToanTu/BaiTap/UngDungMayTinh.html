@@ -2,9 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>mayTinh</title>
 </head>
 <body>
-$END$
+
+    <input type="text" id="so1">
+    <input type="text" id="so2">
+
+    <button id="1" onclick="tinhCong();">Cong(+)</button>
+    <button id="2" onclick="tinhTru();">Tru(-)</button>
+    <button id="3" onclick="tinhNhan();">Nhan(*)</button>
+    <button id="4" onclick="tinhChia();">Chia(/)</button>
+
+<p id="ketQua"></p>
+<script>
+    function tinhCong() {
+        let so1 = parseInt(document.getElementById("so1").value);
+        let so2 = parseInt(document.getElementById("so2").value);
+        let ketQua = document.getElementById("ketQua");
+        ketQua.innerText = so1 + so2;
+    }
+    function tinhTru() {
+        let so1 = parseInt(document.getElementById("so1").value);
+        let so2 = parseInt(document.getElementById("so2").value);
+        let ketQua = document.getElementById("ketQua");
+        ketQua.innerText = so1 - so2;
+    }
+    function tinhNhan() {
+        let so1 = parseInt(document.getElementById("so1").value);
+        let so2 = parseInt(document.getElementById("so2").value);
+        let ketQua = document.getElementById("ketQua");
+        ketQua.innerText = so1 * so2;
+    }
+    function tinhChia() {
+        let so1 = parseInt(document.getElementById("so1").value);
+        let so2 = parseInt(document.getElementById("so2").value);
+        let ketQua = document.getElementById("ketQua");
+        ketQua.innerText = so1 / so2;
+    }
+</script>
 </body>
 </html>

@@ -2,9 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Bai1</title>
 </head>
 <body>
-$END$
+    Vật lí: <input type="text" id="diemVatLi">
+    Hóa học: <input type="text" id="diemHoaHoc">
+    Sinh học: <input type="text" id="diemSinhHoc">
+    <button onclick="tinhdiem();">Tinhdiem</button>
+    <p id="ketQuaTB"></p>
+    <p id="ketQuaTong"></p>
+    <script>
+        function tinhdiem() {
+            let diemVatLi = parseInt(document.getElementById("diemVatLi").value);
+            let diemHoaHoc = parseInt(document.getElementById("diemHoaHoc").value);
+            let diemSinhHoc = parseInt(document.getElementById("diemSinhHoc").value);
+            let ketQuaTB = document.getElementById("ketQuaTB");
+            let ketQuaTong = document.getElementById("ketQuaTong");
+            ketQuaTB.innerText = (diemVatLi+diemHoaHoc+diemSinhHoc) / 3;
+            ketQuaTong.innerText = diemVatLi+diemHoaHoc+diemSinhHoc;
+        }
+    </script>
 </body>
 </html>

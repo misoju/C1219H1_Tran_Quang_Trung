@@ -2,9 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>ResortManager</title>
 </head>
 <body>
-$END$
+    Name: <input type="text" id="Name"><br>
+    Personal id: <input type="text" id="personalId"><br>
+    Email: <input type="text" id="Email"><br>
+    Address: <input type="text" id="Address"><br>
+    Customer type: <select id="customerTYPE"><br>
+    <option value="Diamond">Diamond</option>
+    <option value="Platinum">Platinum</option>
+    <option value="Gold">Gold</option>
+    <option value="Silver">Silver</option>
+    <option value="Member">Member</option>
+    </select>
+    Discount: <input type="text" id="Discount"> %<br>
+    Pax : <input type="text" id="numberofPP"><br>
+    Day rent: <input type="text" id="rentDays"><br>
+    Room type: <select id="roomType"><br>
+        <option value="Villa">Villa: 500$/day</option>
+        <option value="Home">Home 300$/day</option>
+        <option value="Room">Room 100$/day</option>
+    </select>
+    Room class: <select id="roomClass"><br>
+        <option value="Vip">Vip</option>
+        <option value="Business">Business</option>
+        <option value="Normal">Normal</option>
+    </select>
+    <button onclick="inputGuestInfo();">Ok</button>
 </body>
 </html>
