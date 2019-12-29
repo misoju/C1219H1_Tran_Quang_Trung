@@ -5,56 +5,43 @@
     <title>ResortManager</title>
 </head>
 <body>
-    Name: <input type="text" id="Name"><br>
-    Personal id: <input type="text" id="personalId"><br>
-    Email: <input type="text" id="Email"><br>
-    Address: <input type="text" id="Address"><br>
-    Customer type: <select id="customerTYPE"><br>
-    <option value="Diamond">Diamond</option>
-    <option value="Platinum">Platinum</option>
-    <option value="Gold">Gold</option>
-    <option value="Silver">Silver</option>
-    <option value="Member">Member</option>
-    </select>
-    Discount: <input type="text" id="Discount"> %<br>
-    Pax : <input type="text" id="numberofPP"><br>
-    Day rent: <input type="text" id="rentDays"><br>
-    Room type: <select id="roomType"><br>
-        <option value="Villa">Villa: 500$/day</option>
-        <option value="Home">Home 300$/day</option>
-        <option value="Room">Room 100$/day</option>
-    </select>
-    Room class: <select id="roomClass"><br>
-        <option value="Vip">Vip</option>
-        <option value="Business">Business</option>
-        <option value="Normal">Normal</option>
-    </select>
-    <button onclick="inputGuestInfo();">Ok</button>
-
-    <p id="Receipt"></p>
-    <script>
-        function inputGuestInfo() {
-            let Name = document.getElementById("Name").value;
-            let personalId = document.getElementById("personalId").value;
-            let Email = document.getElementById("Email").value;
-            let Address = document.getElementById("Address").value;
-            let customerTYPE = document.getElementById("customerTYPE").value;
-            let Discount = document.getElementById("Discount").value;
-            let Pax = document.getElementById("Pax").value;
-            let rentDays = document.getElementById("rentDays").value;
-            let roomType = document.getElementById("roomType").value;
-            let roomClass = document.getElementById("roomClass").value;
-            let Receipt = document.getElementById("Receipt").value;
-            if (roomType == "Villa" ){
-                Receipt.innerText = 500 * Number.parseInt(rentDays) * (1 - Number.parseFloat(Discount))/100
-            }
-            if (roomType == "Home" ){
-                Receipt.innerText = 300 * Number.parseInt(rentDays) * (1 - Number.parseFloat(Discount))/100
-            }
-            if (roomType == "Room" ){
-                Receipt.innerText = 100 * Number.parseInt(rentDays) * (1 - Number.parseFloat(Discount))/100
-            }
-        }
+<script>
+    let Name = prompt("Enter customer name: ");
+    let personalId = prompt("Enter customer ID: ");
+    let Dob = prompt("Enter DoB (dd/MM/YYYY: ");
+    let Email = prompt("Enter customer email: ");
+    let Address = prompt("Enter customer address: ");
+    let customerTYPE = prompt("Enter customer type: ");
+    let Discount = prompt("Enter customer discount: ");
+    let Pax = prompt("Enter number of pax: ");
+    let rentDays = prompt("Enter number of day stay: ");
+    let roomType = prompt("Enter room type: ");
+    let roomClass = prompt("Enter room class: ");
+    let totalPay = 500 * Number.parseInt(rentDays) * (1 - (Number.parseFloat(Discount)/100))
+    if (roomType == "Villa" ){
+        totalPay = 500 * Number.parseInt(rentDays) * (1 - (Number.parseFloat(Discount)/100))
+    }
+    if (roomType == "Home" ){
+        totalPay = 300 * Number.parseInt(rentDays) * (1 - (Number.parseFloat(Discount)/100))
+    }
+    if (roomType == "Room" ){
+        totalPay = 100 * Number.parseInt(rentDays) * (1 - (Number.parseFloat(Discount)/100))
+    }
+    //Hien Thi thong tin
+    alert("Information Of Customer: \n"+
+           "Name: " + Name +
+            "\nCustomer ID : " + personalId +
+            "\n Date of Birth : " + Dob +
+            "\n Email : " + Email +
+            "\n Address : " + Address +
+            "\n Customer Type : " + customerTYPE +
+            "\n Discount : " + Discount +
+            "\n Number of Guest : " + Pax +
+            "\n Number of day stay : " + rentDays +
+            "\n Room type : " + roomType +
+            "\n Room class : " + roomClass +
+            "\n Total Pay : " + totalPay
+    )
     </script>
 </body>
 </html>
