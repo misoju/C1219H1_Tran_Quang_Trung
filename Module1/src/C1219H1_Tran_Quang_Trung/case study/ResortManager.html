@@ -30,5 +30,31 @@
         <option value="Normal">Normal</option>
     </select>
     <button onclick="inputGuestInfo();">Ok</button>
+
+    <p id="Receipt"></p>
+    <script>
+        function inputGuestInfo() {
+            let Name = document.getElementById("Name").value;
+            let personalId = document.getElementById("personalId").value;
+            let Email = document.getElementById("Email").value;
+            let Address = document.getElementById("Address").value;
+            let customerTYPE = document.getElementById("customerTYPE").value;
+            let Discount = document.getElementById("Discount").value;
+            let Pax = document.getElementById("Pax").value;
+            let rentDays = document.getElementById("rentDays").value;
+            let roomType = document.getElementById("roomType").value;
+            let roomClass = document.getElementById("roomClass").value;
+            let Receipt = document.getElementById("Receipt").value;
+            if (roomType == "Villa" ){
+                Receipt.innerText = 500 * Number.parseInt(rentDays) * (1 - Number.parseFloat(Discount))/100
+            }
+            if (roomType == "Home" ){
+                Receipt.innerText = 300 * Number.parseInt(rentDays) * (1 - Number.parseFloat(Discount))/100
+            }
+            if (roomType == "Room" ){
+                Receipt.innerText = 100 * Number.parseInt(rentDays) * (1 - Number.parseFloat(Discount))/100
+            }
+        }
+    </script>
 </body>
 </html>
