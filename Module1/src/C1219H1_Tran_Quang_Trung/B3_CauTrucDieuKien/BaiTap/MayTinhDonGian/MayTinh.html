@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MayTinh</title>
+</head>
+<body>
+<input id="ketQua">
+<button value="1" onclick="nhapDuLieu(this.value)">1</button> <!-- '1' đối sô -->
+<button value="2" onclick="nhapDuLieu(this.value)">2</button> <!-- '2' đối sô -->
+<script>
+    function nhapSoMot() {
+        let ketQua = document.getElementById("ketQua");
+        ketQua.value = "1";
+    }
+    function nhapSoHai() {
+        let ketQua = document.getElementById("ketQua");
+        ketQua.value = "2";
+    }
+
+    // Tối thiểu dòng code viết ra
+    function nhapDuLieu(giaTri) { // giaTri gọi là tham số
+        let ketQua = document.getElementById("ketQua");
+        ketQua.value = giaTri;
+    }
+
+</script>
+</body>
+</html>
