@@ -17,7 +17,7 @@
     let rentDays = prompt("Enter number of day stay: ");
     let roomType = prompt("Enter room type: ");
     let roomClass = prompt("Enter room class: ");
-    let totalPay = 500 * Number.parseInt(rentDays) * (1 - (Number.parseFloat(Discount)/100))
+    let totalPay
     if (roomType == "Villa" ){
         totalPay = 500 * Number.parseInt(rentDays) * (1 - (Number.parseFloat(Discount)/100))
     }
