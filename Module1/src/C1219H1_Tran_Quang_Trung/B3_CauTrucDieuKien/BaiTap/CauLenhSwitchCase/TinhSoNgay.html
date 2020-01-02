@@ -7,21 +7,30 @@
 <body>
     Month : <input type="text" id="Month">
     <button onclick="CountDay();">Tính số ngày</button>
-    <p id="dayNumber"></p>
 <script>
     function CountDay() {
-        let Month = document.getElementById("Month");
-        let dayNumber = document.getElementById("dayNumber");
+        let Month = parseInt(document.getElementById("Month").value);
         switch (Month) {
-            case 1,3,5,7,8,10,12:
-                dayNumber = 31;
-                alert(dayNumber);
-            case 4,6,9,11:
-                dayNumber = 30;
-                alert(dayNumber);
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                alert("thang co 31 ngay");
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                alert("thang co 30 ngay");
+                break;
             case 2:
-                dayNumber = 29;
-                alert(dayNumber);
+                alert("thang co 28 hoac 29 ngay");
+                break;
+            default:
+                alert("Fail!!")
         }
     }
 </script>
