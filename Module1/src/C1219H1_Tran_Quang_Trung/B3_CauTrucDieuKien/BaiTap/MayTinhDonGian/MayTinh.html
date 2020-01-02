@@ -5,25 +5,42 @@
     <title>MayTinh</title>
 </head>
 <body>
-<input id="ketQua">
-<button value="1" onclick="nhapDuLieu(this.value)">1</button> <!-- '1' đối sô -->
-<button value="2" onclick="nhapDuLieu(this.value)">2</button> <!-- '2' đối sô -->
+<input type="text" id= "ketQua"><br>
+<button onclick=nhapSo("1")>1</button> <!-- '1' đối sô -->
+<button onclick=nhapSo("2")>2</button> <!-- '2' đối sô -->
+<button onclick=nhapSo("3")>3</button>
+<button onclick=nhapSo("+")>+</button><br>
+<button onclick=nhapSo("4")>4</button>
+<button onclick=nhapSo("5")>5</button>
+<button onclick=nhapSo("6")>6</button>
+<button onclick=nhapSo("-")>+</button><br>
+<button onclick=nhapSo("7")>7</button>
+<button onclick=nhapSo("8")>8</button>
+<button onclick=nhapSo("9")>9</button>
+<button onclick=nhapSo("*")>*</button><br>
+<button onclick=xoa()>C</button>
+<button onclick=nhapSo("0")>0</button>
+<button onclick=nhapSo("/")>/</button>
+<button onclick="tinhToan()">=</button>
+
+
 <script>
-    function nhapSoMot() {
+    let srt = "";
+    function nhapSo(so) {
         let ketQua = document.getElementById("ketQua");
-        ketQua.value = "1";
-    }
-    function nhapSoHai() {
-        let ketQua = document.getElementById("ketQua");
-        ketQua.value = "2";
+        srt += so;
+        ketQua.value = srt ;
     }
 
     // Tối thiểu dòng code viết ra
-    function nhapDuLieu(giaTri) { // giaTri gọi là tham số
+    function tinhToan() { // giaTri gọi là tham số
         let ketQua = document.getElementById("ketQua");
-        ketQua.value = giaTri;
+        ketQua.value = eval(srt);
     }
-
+    function xoa() {
+        let ketQua = document.getElementById("ketQua");
+        ketQua.value = "";
+    }
 </script>
 </body>
 </html>
