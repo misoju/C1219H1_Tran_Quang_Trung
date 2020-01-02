@@ -6,42 +6,184 @@
 </head>
 <body>
 <script>
-    let Name = prompt("Enter customer name: ");
-    let personalId = prompt("Enter customer ID: ");
-    let Dob = prompt("Enter DoB (dd/MM/YYYY: ");
-    let Email = prompt("Enter customer email: ");
-    let Address = prompt("Enter customer address: ");
-    let customerTYPE = prompt("Enter customer type: ");
-    let Discount = prompt("Enter customer discount: ");
-    let Pax = prompt("Enter number of pax: ");
-    let rentDays = prompt("Enter number of day stay: ");
-    let roomType = prompt("Enter room type: ");
-    let roomClass = prompt("Enter room class: ");
+    let Name = "Tran Quang Trung";
+    let personalId = "12345678";
+    let Dob = "09/01/1995";
+    let Email = "trantrung0195@gmail.com";
+    let Address = "Da Nang";
+    let customerTYPE = "Diamond";
+    let Discount = 10;
+    let Pax = 4;
+    let rentDays = 5;
+    let roomType = "Villa";
+    let roomClass = "Vip";
     let totalPay
-    if (roomType == "Villa" ){
-        totalPay = 500 * Number.parseInt(rentDays) * (1 - (Number.parseFloat(Discount)/100))
+    let choice = prompt(
+        "1 . Show information Customer.\n" +
+        "2 . Edit Information Customer.\n" +
+        "3 . Show the ammount paid after discount.\n"
+
+    );
+    switch (choice) {
+        case "1":
+            alert("Information Of Customer: \n"+
+                        "Name: " + Name +
+                        "\nCustomer ID : " + personalId +
+                        "\n Date of Birth : " + Dob +
+                        "\n Email : " + Email +
+                        "\n Address : " + Address +
+                        "\n Customer Type : " + customerTYPE +
+                        "\n Discount : " + Discount +
+                        "\n Number of Guest : " + Pax +
+                        "\n Number of day stay : " + rentDays +
+                        "\n Room type : " + roomType +
+                        "\n Room class : " + roomClass
+            );
+            break;
+        case "2":
+            let choiceEdit = prompt(
+                "Choice Information you want to edit: \n" +
+                "1. Name: " + Name +
+                "\n2. Customer ID : " + personalId +
+                "\n3. Date of Birth : " + Dob +
+                "\n4. Email : " + Email +
+                "\n5. Address : " + Address +
+                "\n6. Customer Type : " + customerTYPE +
+                "\n7. Discount : " + Discount +
+                "\n8. Number of Guest : " + Pax +
+                "\n9. Number of day stay : " + rentDays +
+                "\n10. Room type : " + roomType +
+                "\n11. Room class : " + roomClass
+            );
+            switch (choiceEdit) {
+                case "1":
+                    Name = prompt("Enter Name You want to Edit");
+                    break;
+                case "2":
+                    personalId = prompt("Enter Customer Id you want to edit");
+                    break;
+                case "3":
+                    Dob = prompt("Enter Customer Date of Birth you want to edit");
+                    break;
+                case "4":
+                    Email = prompt("Enter Customer Email you want to edit");
+                    break;
+                case "5":
+                    Address = prompt("Enter Customer Address you want to edit");
+                    break;
+                case "6":
+                    customerTYPE = prompt("Enter Customer Address you want to edit");
+                    break;
+                case "7":
+                    Discount = prompt("Enter Discount % you want to edit");
+                    break;
+                case "8":
+                    Pax = prompt("Enter number of Guest stay you want to edit");
+                    break;
+                case "9":
+                    rentDays = prompt("Enter number of day stay at hotel you want to edit");
+                    break;
+                case "10":
+                    roomType = prompt("Enter room type you want to edit");
+                    break;
+                case "11":
+                    roomClass = prompt("Enter room class you want to edit");
+                    break;
+                default:
+                    alert("Fail!!")
+                    break;
+
+            }
+            alert("Information Of Customer: \n"+
+                "Name: " + Name +
+                "\nCustomer ID : " + personalId +
+                "\n Date of Birth : " + Dob +
+                "\n Email : " + Email +
+                "\n Address : " + Address +
+                "\n Customer Type : " + customerTYPE +
+                "\n Discount : " + Discount +
+                "\n Number of Guest : " + Pax +
+                "\n Number of day stay : " + rentDays +
+                "\n Room type : " + roomType +
+                "\n Room class : " + roomClass
+            );
+        case "3":
+            let currentYear = new Date().getFullYear();
+            let birthday = new Date(Dob).getFullYear();
+            let ageCustomer = currentYear - birthday;
+            if (roomType == "Villa" ){
+                totalPay = 500 * Number.parseInt(rentDays) * (1 - (Number.parseFloat(Discount)/100))
+            }
+            else if (roomType == "Home" ){
+                totalPay = 300 * Number.parseInt(rentDays) * (1 - (Number.parseFloat(Discount)/100))
+            }
+            else if (roomType == "Room" ){
+                totalPay = 100 * Number.parseInt(rentDays) * (1 - (Number.parseFloat(Discount)/100))
+            };
+            if (Address == "Da Nang"){
+                totalPay = totalPay - 20
+            }
+            if (Address == "Hue"){
+                totalPay = totalPay - 10
+            }
+            if (Address == "Quang Nam"){
+                totalPay = totalPay - 5
+            }
+            if (rentDays >= 7){
+                totalPay = totalPay - 30
+            }
+            if (rentDays >=5 , rentDays <= 7){
+                totalPay = totalPay - 20
+            }
+            if (rentDays > 2 , rentDays < 4){
+                totalPay = totalPay - 10
+            }
+            if (customerTYPE == "Diamond"){
+                totalPay = totalPay - 15
+            }
+            if (customerTYPE == "Platinum"){
+                totalPay = totalPay - 10
+            }
+            if (customerTYPE == "Gold"){
+                totalPay = totalPay - 5
+            }
+            if (customerTYPE == "Silver"){
+                totalPay = totalPay - 2
+            }
+            if (ageCustomer >= 30 , Address == "Da Nang"){
+                totalPay = totalPay - 2
+            }
+            if (ageCustomer >= 20 , ageCustomer <= 30 , Address == "Da Nang"){
+                totalPay = totalPay - 2
+            }
+            alert("\n Total pay : " + totalPay);
     }
-    if (roomType == "Home" ){
-        totalPay = 300 * Number.parseInt(rentDays) * (1 - (Number.parseFloat(Discount)/100))
-    }
-    if (roomType == "Room" ){
-        totalPay = 100 * Number.parseInt(rentDays) * (1 - (Number.parseFloat(Discount)/100))
-    }
+    //if (roomType == "Villa" ){
+    //    totalPay = 500 * Number.parseInt(rentDays) * (1 - (Number.parseFloat(Discount)/100))
+    //}
+    //if (roomType == "Home" ){
+    //    totalPay = 300 * Number.parseInt(rentDays) * (1 - (Number.parseFloat(Discount)/100))
+    //}
+    //if (roomType == "Room" ){
+    //    totalPay = 100 * Number.parseInt(rentDays) * (1 - (Number.parseFloat(Discount)/100))
+    //}
+
     //Hien Thi thong tin
-    alert("Information Of Customer: \n"+
-           "Name: " + Name +
-            "\nCustomer ID : " + personalId +
-            "\n Date of Birth : " + Dob +
-            "\n Email : " + Email +
-            "\n Address : " + Address +
-            "\n Customer Type : " + customerTYPE +
-            "\n Discount : " + Discount +
-            "\n Number of Guest : " + Pax +
-            "\n Number of day stay : " + rentDays +
-            "\n Room type : " + roomType +
-            "\n Room class : " + roomClass +
-            "\n Total Pay : " + totalPay
-    )
+    //alert("Information Of Customer: \n"+
+    //       "Name: " + Name +
+    //        "\nCustomer ID : " + personalId +
+    //        "\n Date of Birth : " + Dob +
+    //        "\n Email : " + Email +
+    //        "\n Address : " + Address +
+    //        "\n Customer Type : " + customerTYPE +
+    //        "\n Discount : " + Discount +
+    //        "\n Number of Guest : " + Pax +
+    //        "\n Number of day stay : " + rentDays +
+    //        "\n Room type : " + roomType +
+    //        "\n Room class : " + roomClass +
+    //        "\n Total Pay : " + totalPay
     </script>
+
+
 </body>
 </html>
