@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let num = prompt("Nhap so nguyen to ban can: ");
+    function isPrime(num) {
+        for(let i = 2; i < num; i++)
+            if(num % i === 0) return false;
+        return num > 1;
+    }
+    document.write(isPrime(num));
+</script>
+</body>
+</html>

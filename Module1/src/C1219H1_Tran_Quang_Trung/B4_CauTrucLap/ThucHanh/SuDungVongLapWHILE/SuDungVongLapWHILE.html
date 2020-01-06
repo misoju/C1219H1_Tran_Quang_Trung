@@ -2,9 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<p id="demo"></p>
+<script>
+    let num = "";
+    let num1 = 0;
+    while( num != -1 ) {
+        num = prompt("Enter number :")
+        alert(num)
+        num1 += num;
+        document.getElementById("demo").innerText = num1 ;
+    }
+</script>
 </body>
 </html>

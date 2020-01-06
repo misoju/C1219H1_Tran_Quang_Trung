@@ -2,9 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let choice = prompt(
+"1 . Bai 1.\n" +
+"2 . Bai 2.\n" +
+"3 . Bai 3.\n" +
+"4 . Bai 4.\n" +
+"5 . Bai 5.\n" +
+"6 . Bai 6.\n" +
+"7 . Bai 7.\n"
+);
+    switch (choice) {
+        case "1":
+            let Number1 = prompt("Enter number A: ");
+            let Number2 = prompt("Enter number B: ");
+            if (Number.parseInt(Number1) % Number.parseInt(Number2) == 0) {
+                alert("\n A co chia het cho B ")
+            } else {
+                alert("\n A khong chia het cho B")
+            }
+            break;
+        case "2":
+            let Age1 = prompt("Nhap tuoi hoc sinh: ");
+            if (Number.parseInt(Age1) < 15) {
+                alert("\n Hoc sinh du tuoi vao lop 10 ")
+            } else {
+                alert("\n Hoc sinh khong du tuoi vao lop 10 ")
+            }
+            break;
+        case "3":
+
+    }
+</script>
 </body>
 </html>
