@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ResortManager</title>
+</head>
+<body>
+<script>
+    let checkValidate = false;
+    let Email;
+    let Dob;
+    // let Name = prompt("Enter customer name: ");
+    // let personalId = prompt("Enter customer ID: ");
+    do{
+        checkValidate = false;
+        Dob = prompt("Enter DoB (dd/MM/YYYY): ");
+        if (Dob.charAt(2)!== "/" || Dob.charAt(5) !== "/"){
+            alert("Birthday is invalid !! Please try again");
+            continue;
+        }
+        // substring (bat dau , ket thuc (khonglay))
+        let day = Dob.substring(0 , 2);
+        let month = Dob.substring(3 , 5);
+        let year = Dob.substring(6 , 10);
+        if (!isNaN(day) && !isNaN(month) && !isNaN(year)){
+            day = Number.parseFloat(day);
+            month = Number.parseFloat(month);
+            year = Number.parseFloat(year);
+            if (Number.isInteger(day) && Number.isInteger(month) && Number.isInteger(year)){
+                if (day > 0 && day < 32 && month > 0 && month < 13 && year > 1960 && year < 2019 ){
+                    checkValidate = true;
+                }
+            }
+        }
+        if (!checkValidate){
+            alert("Birthday is invalid!! Please try again");
+        }
+    }while (!checkValidate);
+    do {
+        checkValidate = true;
+        Email = prompt("Enter customer email: ");
+        let countDoc = 0;
+        let countAt = 0;
+        for (let i = 0 ; i < Email.length; i++){
+            if(Email.charAt(i) === "@"){
+                countAt++;
+            }
+            if (Email.charAt(i) === "."){
+                countDoc++;
+            }
+            }
+        if (countAt !== 1 || countDoc <1){
+            checkValidate = false;
+            alert("Email is invalid!! Please try again");
+        }
+    } while (!checkValidate);
+    // let Address = prompt("Enter customer address: ");
+    // let customerTYPE = prompt("Enter customer type: ");
+    // let Discount = prompt("Enter customer discount: ");
+    // let Pax = prompt("Enter number of pax: ");
+    // let rentDays = prompt("Enter number of day stay: ");
+    // let roomType = prompt("Enter room type: ");
+    // let roomClass = prompt("Enter room class: ");
+    // let totalPay
+    // if (roomType == "Villa" ){
+    //     totalPay = 500 * Number.parseInt(rentDays) * (1 - (Number.parseFloat(Discount)/100))
+    // }
+    // if (roomType == "Home" ){
+    //     totalPay = 300 * Number.parseInt(rentDays) * (1 - (Number.parseFloat(Discount)/100))
+    // }
+    // if (roomType == "Room" ){
+    //     totalPay = 100 * Number.parseInt(rentDays) * (1 - (Number.parseFloat(Discount)/100))
+    // }
+    //Hien Thi thong tin
+    // let DD;
+    // let MM;
+    // let YYYY;
+    // let Dob = prompt("Enter DoB (dd/MM/YYYY: ");
+    // while (Dob == + DD + "/" + MM + "/" +YYYY) {
+    //     if (DD >= 1 && DD <= 31){
+    //         if (MM >= 1 && MM <=12){
+    //             if (YYYY >= 1900 && YYYY <= )
+    //         }
+    //     }
+    // }
+
+    alert("Information Of Customer: \n"+
+           // "Name: " + Name +
+           //  "\nCustomer ID : " + personalId +
+        "\n Date of Birth : " + Dob +
+             "\n Email : " + Email
+           //  "\n Address : " + Address +
+           //  "\n Customer Type : " + customerTYPE +
+           //  "\n Discount : " + Discount +
+           //  "\n Number of Guest : " + Pax +
+           //  "\n Number of day stay : " + rentDays +
+           //  "\n Room type : " + roomType +
+           //  "\n Room class : " + roomClass +
+           //  "\n Total Pay : " + totalPay
+    )
+    </script>
+
+</body>
+</html>

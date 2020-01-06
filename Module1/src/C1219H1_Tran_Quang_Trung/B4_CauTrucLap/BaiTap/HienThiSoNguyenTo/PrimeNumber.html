@@ -6,13 +6,33 @@
 </head>
 <body>
 <script>
-    let num = prompt("Nhap so nguyen to ban can: ");
-    function isPrime(num) {
-        for(let i = 2; i < num; i++)
-            if(num % i === 0) return false;
-        return num > 1;
+    //cho nhập số nguyên tố
+    let input = parseInt(prompt("nhap vao 1 so : "));
+
+    showPrimeNumber(m);
+
+    function showPrimeNumber(m) {
+            let count =0;
+            let i = 2;
+            let str = "";
+            while (count < m){
+                if (showPrimeNumber(i)){
+                    str += i + " ";
+                    count++;
+                }
+                i++;
+            }
+            document.write(str);
+        }
+    document.write(isPrime(total) +"is prime number");
+    function getPrimeNumber(so) {
+        for (let i  = 2 ; i< so; i++){
+            if (so % i == 0){
+                return false;
+            }
+            return true;
+        }
     }
-    document.write(isPrime(num));
 </script>
 </body>
 </html>
