@@ -9,8 +9,22 @@
     let checkValidate = false;
     let Email;
     let Dob;
+    let personalId;
     // let Name = prompt("Enter customer name: ");
-    // let personalId = prompt("Enter customer ID: ");
+    do {
+        checkValidate = false;
+        personalId = prompt("Enter customer ID: ");
+        if (personalId.length < 9) {
+            alert("Personal ID is invalid!! Please try again");
+            continue;
+        }
+        if (personalId.isInteger && personalId > 0) {
+            checkValidate = true;
+        }
+        if (!checkValidate) {
+            alert("Personal ID is invalid!! Please try again");
+        }
+    }while (!checkValidate);
     do{
         checkValidate = false;
         Dob = prompt("Enter DoB (dd/MM/YYYY): ");
