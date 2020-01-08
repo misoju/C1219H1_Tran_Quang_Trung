@@ -10,21 +10,33 @@
     let Email;
     let Dob;
     let personalId;
+    let Discount;
+    let Pax;
+    let rentDays;
     // let Name = prompt("Enter customer name: ");
     do {
         checkValidate = false;
         personalId = prompt("Enter customer ID: ");
-        if (personalId.length < 9) {
+        if (isNaN(personalId)) {
             alert("Personal ID is invalid!! Please try again");
             continue;
         }
-        if (personalId.isInteger && personalId > 0) {
+        personalId = Number.parseFloat(personalId);
+        if (!Number.isInteger(personalId)){
+            alert("Personal ID is invalid!! Please try again");
+            continue;
+        }
+        if (personalId >= 100000000 && personalId <= 999999999) {
             checkValidate = true;
+        }
+        else{
+            alert("Personal ID is invalid!! Please try again");
         }
         if (!checkValidate) {
             alert("Personal ID is invalid!! Please try again");
         }
     }while (!checkValidate);
+
     do{
         checkValidate = false;
         Dob = prompt("Enter DoB (dd/MM/YYYY): ");
@@ -50,8 +62,9 @@
             alert("Birthday is invalid!! Please try again");
         }
     }while (!checkValidate);
+
     do {
-        checkValidate = true;
+        checkValidate = false;
         Email = prompt("Enter customer email: ");
         let countDoc = 0;
         let countAt = 0;
@@ -68,11 +81,48 @@
             alert("Email is invalid!! Please try again");
         }
     } while (!checkValidate);
+
     // let Address = prompt("Enter customer address: ");
     // let customerTYPE = prompt("Enter customer type: ");
-    // let Discount = prompt("Enter customer discount: ");
-    // let Pax = prompt("Enter number of pax: ");
-    // let rentDays = prompt("Enter number of day stay: ");
+    do {
+        checkValidate = false;
+        Discount = prompt("Enter customer discount: ");
+        if (!isNaN(Discount)){
+            Discount = Number.parseFloat(Discount);
+            if (Discount >= 0){
+                checkValidate = true;
+            }
+        }
+        if (!checkValidate){
+            alert("Discount invalid !! Please try again");
+        }
+    }while (!checkValidate);
+    do {
+        checkValidate = false;
+        Pax = prompt("Enter number of pax: ");
+        if (!isNaN(Pax)){
+            Pax = Number.parseFloat(Pax);
+            if (Pax >= 0 && Number.isInteger(Pax)){
+                checkValidate = true;
+            }
+        }
+        if (!checkValidate){
+            alert("Number of pax is invalid !! Please try again");
+        }
+    }while (!checkValidate);
+    do {
+        checkValidate = true;
+        rentDays = prompt("Enter number of day stay: ");
+        if (!isNaN(rentDays)){
+            rentDays = Number.parseFloat(rentDays);
+            if (rentDays >= 0 && Number.isInteger(rentDays)){
+                checkValidate = true;
+            }
+        }
+        if (!checkValidate){
+            alert("Number of rent days is invalid !! Please try again");
+        }
+    }while (!checkValidate);
     // let roomType = prompt("Enter room type: ");
     // let roomClass = prompt("Enter room class: ");
     // let totalPay
@@ -100,12 +150,12 @@
 
     alert("Information Of Customer: \n"+
            // "Name: " + Name +
-           //  "\nCustomer ID : " + personalId +
-        "\n Date of Birth : " + Dob +
-             "\n Email : " + Email
+            "\nCustomer ID : " + personalId +
+            "\n Date of Birth : " + Dob +
+            "\n Email : " + Email +
            //  "\n Address : " + Address +
            //  "\n Customer Type : " + customerTYPE +
-           //  "\n Discount : " + Discount +
+            "\n Discount : " + Discount
            //  "\n Number of Guest : " + Pax +
            //  "\n Number of day stay : " + rentDays +
            //  "\n Room type : " + roomType +
