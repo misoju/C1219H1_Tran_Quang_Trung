@@ -5,20 +5,13 @@
     <title>Title</title>
 </head>
 <body>
-Tu can tra : <input type="text" id="wordCheck">
-<button onclick="tuDien();">Translate</button>
-<p id="result"></p>
 <script>
-    function tuDien() {
-        let x = ["khi", "lon", "chuot", "cuu"]
-        let y = ["monkey", "pig", "mouse", "sheep"]
-        // let z = prompt("nhap tu ban can tra: ")
-        let z = document.getElementById("wordCheck");
-        let ketQua = document.getElementById("result");
-        for (let a = 0; a < x.length; a++) {
-            if (z == x[a]) {
-                alert(x[a] + "dich la" + y[a]);
-            }
+    let x = ["khi","lon","chuot","cuu"];
+    let y = ["monkey","pig","mouse","sheep"];
+    let z = prompt("nhap tu ban can tra: ");
+    for(let a = 0 ; a < x.length ; a ++){
+        if (z == x[a]){
+            alert(x[a] + " "+ "dich la" +" " + y[a]);
         }
     }
 </script>
