@@ -13,7 +13,22 @@
     let Discount;
     let Pax;
     let rentDays;
-    // let Name = prompt("Enter customer name: ");
+    let Name = prompt("Enter customer name: ");
+    let nameStandardize = "";
+
+    Name = Name.trim().toLocaleLowerCase();
+    for (let i = 0; i < Name.length ; i++){
+        if (Name.charAt(i) === " " && Name.charAt(i+1) === " "){
+            continue;
+        }
+        if (i === 0 || Name.charAt(i-1) === " "){
+            nameStandardize += Name.charAt(i).toLocaleUpperCase();
+            continue;
+        }
+        nameStandardize += Name.charAt(i);
+    }
+    Name = nameStandardize;
+
     do {
         checkValidate = false;
         personalId = prompt("Enter customer ID: ");
@@ -124,8 +139,6 @@
             alert("Number of rent days is invalid !! Please try again");
         }
     }while (!checkValidate);
-    var UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    var LOWER = 'abcdefghijklmnopqrstuvwxyz';
 
     // let roomType = prompt("Enter room type: ");
     // let roomClass = prompt("Enter room class: ");
@@ -153,7 +166,7 @@
     // }
 
     alert("Information Of Customer: \n"+
-           // "Name: " + Name +
+           "Name: " + Name +
             "\nCustomer ID : " + personalId +
             "\n Date of Birth : " + Dob +
             "\n Email : " + Email +
