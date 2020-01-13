@@ -12,10 +12,42 @@
     switch (choice) {
         case "1":
             let arrLength = prompt("Enter the number of customers you add: ");
-            for (let i = 0; i < arrLength; i++){
+            for (var i = 0; i < arrLength; i++){
+                arrNameCustomer.push(prompt("Enter name customer no " + (i+1)));
             }
+            var result = "";
+            for (var i = 0; i < arrNameCustomer.length; i++){
+                result += "\n" + (i+1) + ". " + arrNameCustomer[i];
+            }
+            alert(result);
+            arrNameCustomer.sort();
+            result = "";
+            for (var i = 0; i < arrNameCustomer.length; i++){
+                result += "\n" + (i+1) + ". " + arrNameCustomer[i];
+            }
+            alert(result);
             break;
         case "2":
+            arrNameCustomer[0] = "Tuan";
+            arrNameCustomer[1] = "Thanh";
+            arrNameCustomer[2] = "Kien";
+            arrNameCustomer[3] = "Trung";
+            arrNameCustomer[4] = "Nghia";
+            arrNameCustomer[5] = "Quang";
+            arrNameCustomer[6] = "Thinh";
+            arrNameCustomer[7] = "Toan";
+            arrNameCustomer[8] = "Tu";
+            var result = "";
+            for (var i = 0; i < arrNameCustomer.length; i++){
+                result += "\n" + (i+1) + ". " + arrNameCustomer[i];
+            }
+            let indexDelete = prompt("Choice customer need to delete: "+ result);
+            arrNameCustomer.splice(Number.parseInt(indexDelete) - 1,1);
+            var resultAfterdelete = "";
+            for (var i = 0; i < arrNameCustomer.length; i++) {
+                resultAfterdelete += "\n" + (i + 1) + ". " + arrNameCustomer[i];
+            }
+            alert("List customer after deleted: " + resultAfterdelete);
             break;
         default:
             alert("Fail !!");
