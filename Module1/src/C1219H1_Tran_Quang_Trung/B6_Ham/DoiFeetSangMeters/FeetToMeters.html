@@ -5,13 +5,24 @@
     <title>Title</title>
 </head>
 <body>
-Feet: <input type="text" id="feet">
-Meters: <input type="text" id="meter">
-<button onclick="feetToMetersConvert();">Convert</button>
-<script>
-function feetToMetersConvert() {
 
-}
+<form>
+    <p>
+        <label>Feet</label>
+        <input id="inputFeet" type="text" placeholder="Feet"
+               oninput="lengthConverter(this.value)"
+               onchange="lengthConverter(this.value)">
+    </p>
+    <p>Meters: <span id="outputMeters"></span></p>
+</form>
+
+<script>
+
+    function lengthConverter(valNum) {
+        valNum = parseFloat(valNum);
+        document.getElementById("outputMeters").innerHTML = valNum*0.305;
+    }
+
 </script>
 </body>
 </html>
