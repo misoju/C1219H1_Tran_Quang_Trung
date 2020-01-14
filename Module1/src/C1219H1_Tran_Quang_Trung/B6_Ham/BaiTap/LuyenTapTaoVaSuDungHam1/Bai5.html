@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let questionStar = prompt("input star name you want to find:");
+    let Star = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let Constellation = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+    function findStar() {
+        let finalAnswer = "";
+        for (let i = 0 ; i < Star.length ; i++){
+            if (questionStar == Star[i]){
+                finalAnswer = "the star : " + Star[i] + " belong to :" + Constellation[i] ;
+                break;
+            }
+            else {
+                finalAnswer = "can't find the star you input";
+            }
+        }
+        return finalAnswer;
+    }
+    document.write(findStar());
+</script>
+</body>
+</html>

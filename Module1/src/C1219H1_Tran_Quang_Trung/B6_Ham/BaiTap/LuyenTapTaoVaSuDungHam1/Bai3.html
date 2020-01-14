@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number1 = prompt("nhap so 1:");
+    let number2 = prompt("nhap so 2:");
+    function biggestNumber() {
+        let answer = "";
+        if (number1 > number2){
+            answer = "so 1 lon hon so 2";
+        }
+        else {
+            answer = Number.parseInt(number1) + Number.parseInt(number2);
+        }
+        return answer;
+    }
+    alert(biggestNumber());
+</script>
+</body>
+</html>
