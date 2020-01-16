@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Yeu cau xu li: <select id="choiceOption">
+    <option value="addNew">Add new customer</option>
+    <option value="displayInfo">Display Information Customer</option>
+    <option value="editInfo">Edit Information Customer</option>
+    <option value="deleteInfo">Delete Customer</option>
+    <option value="exit">Exit</option>
+</select>
+<button onclick="changeInfo();">Run</button>
+<script>
+    // let newCustomer = function () {
+    //     this.setNameCustomer = function (nameCustomer) {
+    //         this.nameCustomer = nameCustomer;
+    //     };
+    //     this.setIdCustomer = function (personalId) {
+    //         this.personalId = personalId;
+    //     };
+    //     this.setDob = function (Dob) {
+    //         this.Dob = Dob;
+    //     };
+    //     this.setEmail = function (Email) {
+    //         this.Email = Email;
+    //     };
+    //     this.setCustomerTYPE = function (customerTYPE) {
+    //         this.customerTYPE = customerTYPE;
+    //     };
+    //     this.setDiscount = function (Discount) {
+    //         this.Discount = Discount;
+    //     };
+    //     this.setPax = function (Pax) {
+    //         this.Pax = Pax;
+    //     };
+    //     this.setRentDays = function (rentDays) {
+    //         this.rentDays = rentDays;
+    //     };
+    //     this.getNameCustomer = function () {
+    //         return this.nameCustomer;
+    //     };
+    //     this.getIdCustomer = function () {
+    //         return this.personalId;
+    //     };
+    //     this.getDob = function () {
+    //         return this.Dob;
+    //     };
+    //     this.getEmail = function () {
+    //         return this.Email;
+    //     };
+    //     this.getCustomerTYPE = function () {
+    //         return this.customerTYPE;
+    //     };
+    //     this.getDiscount = function () {
+    //         return this.Discount;
+    //     };
+    //     this.getPax = function () {
+    //         return this.Pax;
+    //     };
+    //     this.getRentDays = function () {
+    //         return this.rentDays;
+    //     };
+        let arrListCustomers = [];
+        function addNewCustomer() {
+            let arrCustomer = [];
+            let nameCustomer = prompt("input name customer: ");
+            let personalId = prompt("input personalID: ");
+            let Dob = prompt("input customer date of birth: ");
+            let Email = prompt("input customer Email: ");
+            let Address = prompt("input Address: ");
+            let customerTYPE = prompt("input customerTYPE: ");
+            let Discount = prompt("input Discount: ");
+            let Pax = prompt("input Pax: ");
+            let rentDays = prompt("input rentDays: ");
+            arrCustomer.push(nameCustomer);
+            arrCustomer.push(personalId);
+            arrCustomer.push(Dob);
+            arrCustomer.push(Email);
+            arrCustomer.push(Address);
+            arrCustomer.push(customerTYPE);
+            arrCustomer.push(Discount);
+            arrCustomer.push(Pax);
+            arrCustomer.push(rentDays);
+            arrListCustomers.push(arrCustomer);
+
+            // return "type : " + this.getType()
+            //     + "\n color : " + this.getColor()
+            //     + "\n price : " + this.getPrice()
+            //     + "\n weight : " + this.getWeight();
+
+    };
+        function displayCustomers() {
+            var result = "";
+            for (var i = 0; i < arrListCustomers.length; i++){
+                result += "\n" + (i+1) + ". " + "Name :"+ arrListCustomers[i][0] + "\n" + "Id customer: "
+                    + arrListCustomers[i][1] + "\n" + (i+1) + ". " + "Date of birth :"+ arrListCustomers[i][2]
+                    + "\n" + (i+1) + ". " + "Email :"+ arrListCustomers[i][3]
+                    + "\n" + (i+1) + ". " + "Address :"+ arrListCustomers[i][4]
+                    + "\n" + (i+1) + ". " + "Customer type :"+ arrListCustomers[i][5];
+            }
+            alert(result);
+        }
+    function changeInfo() {
+        let choiceOption = document.getElementById("choiceOption").value;
+        switch (choiceOption) {
+            case "addNew":
+                addNewCustomer();
+                break;
+            case "displayInfo":
+                displayCustomers();
+                break;
+        }
+    }
+</script>
+</body>
+</html>
