@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let inputInfo = "123abc_";
+    function checkInfo(str) {
+        correctInfo = /^[_a-z0-9]{6,}$/;
+        if (correctInfo.test(str)){
+            return true;
+        }
+        return false;
+    }
+    alert(checkInfo(inputInfo));
+</script>
+</body>
+</html>

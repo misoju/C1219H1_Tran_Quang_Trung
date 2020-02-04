@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let inputInfo = prompt("nhap so dt");
+    function checkInfo(str) {
+        correctInfo = /^\([0-9]{2}\)-\([0][0-9]{9}\)$/;
+        if (correctInfo.test(str)){
+            return true;
+        }
+        return false;
+    }
+    alert(checkInfo(inputInfo));
+</script>
+</body>
+</html>
