@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let listCar = ["Toyota","Mercedes","Hyundai","Daewon"];
+    let nameCar = "";
+    let sCar = prompt("nhap ky ty xe:");
+    function findCard() {
+        if (sCar == "T"){
+            nameCar = "Toyota";
+        }
+        else if (sCar == "M"){
+            nameCar = "Mercedes";
+        }
+        else if (sCar == "H"){
+            nameCar = "Hyundai";
+        }
+        else if (sCar == "D"){
+            nameCar = "Daewon";
+        }
+    }
+    function checkCar() {
+        let checkCar = listCar[0];
+        for (let i = 0 ; i < listCar.length ; i++){
+            if (nameCar == listCar[i]){
+                checkCar = listCar[i];
+            }
+        }
+        alert("xe ban can tim la" +checkCar);
+    }
+    findCard(sCar);
+    checkCar();
+</script>
+</body>
+</html>

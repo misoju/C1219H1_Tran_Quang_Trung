@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="Employee.js"></script>
+</head>
+<body>
+<script>
+    let listEmployee = [];
+    function addNewEmployee() {
+        let mrA = new Employee();
+        mrA.setNameEmployee("Nguyen Van A");
+        mrA.setDayWork(20);
+        mrA.setBaseSalary(200000);
+        listEmployee.push(mrA);
+    }
+    function displayEmployee() {
+        alert("ten nhan vien :" + listEmployee[0].getNameEmployee() +
+            "\nngay lam:" + listEmployee[0].getDayWork() +
+            "\nluong co ban:" + listEmployee[0].getBaseSalary() +
+            "\ntong luong: " + listEmployee[0].finalSalary());
+    }
+    addNewEmployee();
+    displayEmployee();
+</script>
+</body>
+</html>

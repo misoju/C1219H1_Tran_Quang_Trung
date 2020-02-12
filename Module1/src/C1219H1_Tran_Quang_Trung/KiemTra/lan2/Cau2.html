@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let deleteFruit = prompt("input delete fruit:");
+    let fruit = ["Apple","Banana","Lemon"];
+    function removeFruit() {
+        let indexDelete = 0;
+        let resultAfterdelete = "";
+        for (let i = 0 ; i < fruit.length ; i++){
+            if (deleteFruit == fruit[i]){
+                indexDelete = i;
+            }
+        }
+
+        fruit.splice(Number.parseInt(indexDelete),1);
+        for (let i = 0; i < fruit.length; i++) {
+            resultAfterdelete += "\n" + (i + 1) + ". " + fruit[i];
+        }
+        alert("List customer after deleted: " + resultAfterdelete);
+    }
+    removeFruit(deleteFruit);
+</script>
+</body>
+</html>

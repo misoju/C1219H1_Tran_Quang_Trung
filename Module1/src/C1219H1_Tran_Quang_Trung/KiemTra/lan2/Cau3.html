@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let inputNumber = prompt("nhap 1 so : ");
+    function isPrime() {
+        let resultNumber = 0;
+        if( parseInt(inputNumber)<0) {
+            resultNumber++;
+        }
+        for (let i = 2 ; i < Number.parseInt(inputNumber); i++){
+            if (Number.parseInt(inputNumber) % i == 0){
+                resultNumber++
+            }else resultNumber = resultNumber
+        }
+        if (resultNumber != 0 ){
+            alert("false");
+        }else {
+            alert("true")
+        }
+    }
+    isPrime();
+</script>
+</body>
+</html>

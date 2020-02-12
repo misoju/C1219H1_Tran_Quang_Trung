@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="Student.js"></script>
+</head>
+<body>
+<script>
+    let listStudent = [];
+    function addNewStudent() {
+        let cus = new Student();
+        cus.setIdStudent("102139");
+        cus.setNameStudent("Tran Quang");
+        cus.setBirthdayStudent("01/01/1999");
+        cus.setFinalPoint(7);
+        listStudent.push(cus);
+    }
+    function displayStudent() {
+        alert("id" + listStudent[0].getIdStudent() +
+            "\nten hoc sinh :" + listStudent[0].getNameStudent() +
+            "\nngay sinh:" + listStudent[0].getBirthdayStudent() +
+            "\ndiem TB:" + listStudent[0].getFinalPoint() +
+            "\nHanh kiem: " + listStudent[0].finalReview());
+    }
+    addNewStudent();
+    displayStudent();
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+let listScore = [-1,5,2,8,10,6,10];
+function findMaxScore() {
+    let maxScore = listScore[0];
+    let maxIndex = 0;
+    for (let i = 0 ; i < listScore.length ; i++){
+        if (maxScore <= listScore[i]){
+            maxScore = listScore[i];
+            maxIndex = i+1;
+        }
+    }
+    alert("so lơn nhat la" +maxScore +"\ntai vi tri" +maxIndex)
+}
+
+findMaxScore();
+</script>
+</body>
+</html>
