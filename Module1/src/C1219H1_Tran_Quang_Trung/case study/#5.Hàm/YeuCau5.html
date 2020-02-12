@@ -10,9 +10,8 @@ Yeu cau xu li: <select id="choiceOption">
     <option value="displayInfo">Display Information Customer</option>
     <option value="editInfo">Edit Information Customer</option>
     <option value="deleteInfo">Delete Customer</option>
-    <option value="exit">Exit</option>
 </select>
-<button onclick="changeInfo();">Run</button>
+<button onclick="changeMenu();">Run</button>
 <script>
     // let newCustomer = function () {
     //     this.setNameCustomer = function (nameCustomer) {
@@ -96,14 +95,98 @@ Yeu cau xu li: <select id="choiceOption">
             var result = "";
             for (var i = 0; i < arrListCustomers.length; i++){
                 result += "\n" + (i+1) + ". " + "Name :"+ arrListCustomers[i][0] + "\n" + "Id customer: "
-                    + arrListCustomers[i][1] + "\n" + (i+1) + ". " + "Date of birth :"+ arrListCustomers[i][2]
-                    + "\n" + (i+1) + ". " + "Email :"+ arrListCustomers[i][3]
-                    + "\n" + (i+1) + ". " + "Address :"+ arrListCustomers[i][4]
-                    + "\n" + (i+1) + ". " + "Customer type :"+ arrListCustomers[i][5];
+                    + arrListCustomers[i][1] ;
+                    // + "\n" + (i+1) + ". " + "Date of birth :"+ arrListCustomers[i][2]
+                    // + "\n" + (i+1) + ". " + "Email :"+ arrListCustomers[i][3]
+                    // + "\n" + (i+1) + ". " + "Address :"+ arrListCustomers[i][4]
+                    // + "\n" + (i+1) + ". " + "Customer type :"+ arrListCustomers[i][5];
             }
-            alert(result);
+            if (checkEditCustomer) {
+                let choiceDisplayInfo = prompt(result + "\nchoice customer you want to edit:");
+                displayCustomersInfo(choiceDisplayInfo - 1);
+            }
+            else if (checkDeleteCustomer) {
+                let choiceDisplayInfo = prompt(result + "\nchoice customer you want to delete:");
+                deleteCustomer(choiceDisplayInfo - 1);
+            }
+            else {
+                checkEditCustomer = false;
+                checkDeleteCustomer = false;
+                let choiceDisplayInfo = prompt(result + "\nchoice customer you want to see:");
+                displayCustomersInfo(choiceDisplayInfo - 1);
+            }
         }
-    function changeInfo() {
+        function displayCustomersInfo(index) {
+            if (checkEditCustomer){
+                let choiceEditInfo = prompt("1.Name :" + arrListCustomers[index][0]+
+                    "\n2.Id card : " + arrListCustomers[index][1]+
+                    "\n3.Dob : " + arrListCustomers[index][2]+
+                    "\n4.Email : " + arrListCustomers[index][3]+
+                    "\n5.Address : " + arrListCustomers[index][4]+
+                    "\n6.Customer type : " + arrListCustomers[index][5]
+                );
+                if (choiceEditInfo <= 6) {
+                    editCustomer(Number.parseInt(choiceEditInfo) - 1);
+                }
+            }
+            else {
+                alert("Infomation of customer : \n" +
+                    "Name :" + arrListCustomers[index][0] +
+                    "\nId card : " + arrListCustomers[index][1] +
+                    "\nDob : " + arrListCustomers[index][2] +
+                    "\nEmail : " + arrListCustomers[index][3] +
+                    "\nAddress : " + arrListCustomers[index][4] +
+                    "\nCustomer type : " + arrListCustomers[index][5]
+                );
+            }
+        }
+        function choiceEditCustomers() {
+            checkEditCustomer = true;
+            displayCustomers();
+        }
+        function editCustomer(index) {
+            let editInfo = prompt("Edit Info : ");
+            switch (index) {
+                case 0:
+                    arrListCustomers[index][0] = editInfo;
+                    break;
+                case 1:
+                    arrListCustomers[index][1] = editInfo;
+                    break;
+                case 2:
+                    arrListCustomers[index][2] = editInfo;
+                    break;
+                case 3:
+                    arrListCustomers[index][3] = editInfo;
+                    break;
+                case 4:
+                    arrListCustomers[index][4] = editInfo;
+                    break;
+                case 5:
+                    arrListCustomers[index][5] = editInfo;
+                    break;
+                default:
+                    alert("Fail !");
+                    break;
+            }
+            checkEditCustomer = false;
+        }
+        function choiceDeleteCustomers() {
+            checkDeleteCustomer = true;
+            displayCustomers();
+        }
+        function deleteCustomer(index) {
+            let chooseConfirm = prompt(
+                "Delete Customer: " + "Name :"+ arrListCustomers[i][0] + " " + "Id customer: "
+                + arrListCustomers[i][1] +
+                "\n 1. Yes\n2.No");
+            if (chooseConfirm === "1"){
+                arrListCustomers.splice(index,1);
+                alert("Delete Complete!!!");
+            }
+        }
+
+    function changeMenu() {
         let choiceOption = document.getElementById("choiceOption").value;
         switch (choiceOption) {
             case "addNew":
@@ -111,6 +194,12 @@ Yeu cau xu li: <select id="choiceOption">
                 break;
             case "displayInfo":
                 displayCustomers();
+                break;
+            case "editInfo":
+                choiceEditCustomers();
+                break;
+            case "deleteInfo":
+                choiceDeleteCustomers();
                 break;
         }
     }
