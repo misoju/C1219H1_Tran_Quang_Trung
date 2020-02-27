@@ -6,7 +6,7 @@ public class Shape {
 
     public Shape() {
     }
-
+//Có hai thuộc tính là color (String) và filled (boolean)
     public Shape(String color, boolean filled) {
         this.color = color;
         this.filled = filled;
@@ -27,7 +27,7 @@ public class Shape {
     public void setFilled(boolean filled) {
         this.filled = filled;
     }
-
+//Được cài đè phương thức toString trả về chuỗi ký tự theo mẫu "A Shape with color of xxx and filled/not filled"
     @Override
     public String toString() {
         return "A Shape with color of "
@@ -36,3 +36,4 @@ public class Shape {
                 + (isFilled() ? "filled" : "not filled");
     }
 }
+//Có ba lớp con là Circle và Rectangle, Square
